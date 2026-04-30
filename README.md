@@ -20,7 +20,7 @@ Become an AI Infrastructure Engineer who can integrate AI systems into enterpris
 | Week | Project | Key Skills | Status |
 |------|---------|-----------|--------|
 | 1 | [Data Pipeline & REST API](./data-pipeline-api-week1) | Python · FastAPI · Pandas · NumPy · SentenceTransformers · Embeddings | ✅ Done |
-| 2 | Semantic Search System | ChromaDB · Pinecone · pgvector · Hybrid Search | ⬜ Next |
+| 2 | Semantic Search System | ChromaDB · Pinecone · pgvector · Hybrid Search | ✅ Done |
 | 3 | AI Data Pipeline with Kafka | confluent-kafka-python · Python consumer → embed → VectorDB | ⬜ |
 | 4 | Spring AI Integration | Spring AI · RAG · pgvector · scikit-learn | ⬜ |
 | 5 | LLM APIs & Prompt Engineering | OpenAI · Anthropic · HuggingFace · Function Calling | ⬜ |

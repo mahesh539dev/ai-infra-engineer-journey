@@ -163,8 +163,8 @@ This is **Week 1 of 12** in my AI Infrastructure Engineer transition:
 
 ```
 Phase 1 (Weeks 1–4): AI Foundations + Data Pipelines
-  ✅ Week 1: Python for AI — NumPy, Pandas, FastAPI, Embeddings   ← YOU ARE HERE
-  ⬜ Week 2: Embeddings & Semantic Search (ChromaDB, Pinecone, pgvector)
+  ✅ Week 1: Python for AI — NumPy, Pandas, FastAPI, Embeddings
+  ✅ Week 2: Embeddings & Semantic Search (ChromaDB, Pinecone, pgvector)   ← YOU ARE HERE
   ⬜ Week 3: AI Data Pipeline with Kafka
   ⬜ Week 4: Spring AI + ML Fundamentals
 

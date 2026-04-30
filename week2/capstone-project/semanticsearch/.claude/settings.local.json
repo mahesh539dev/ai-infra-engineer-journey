@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./mvnw compile *)",
+      "Bash(./mvnw test *)",
+      "Bash(./mvnw dependency:tree -q)",
+      "Bash(jar tf *)",
+      "Bash(cd /tmp)",
+      "Bash(jar xf *)",
+      "Bash(javap -p org/springframework/boot/webflux/autoconfigure/error/AbstractErrorWebExceptionHandler.class)"
+    ]
+  }
+}

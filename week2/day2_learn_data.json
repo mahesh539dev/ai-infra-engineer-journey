@@ -1,0 +1,42 @@
+[
+    {
+        "id": "doc_001",
+        "text": "Python is a high-level programming language designed for readability",
+        "metadata": {"source": "tutorial", "topic": "programming"}
+    },
+    {
+        "id": "doc_002",
+        "text": "Machine learning models are trained on large datasets",
+        "metadata": {"source": "research", "topic": "ai"}
+    },
+    {
+        "id": "doc_003",
+        "text": "Vector databases store embeddings for similarity search",
+        "metadata": {"source": "blog", "topic": "databases"}
+    },
+    {
+        "id": "doc_004",
+        "text": "Natural language processing enables computers to understand text",
+        "metadata": {"source": "course", "topic": "nlp"}
+    },
+    {
+        "id": "doc_005",
+        "text": "Deep learning uses neural networks with many layers",
+        "metadata": {"source": "research", "topic": "ai"}
+    },
+    {
+        "id": "doc_006",
+        "text": "FastAPI is a modern Python web framework for building APIs",
+        "metadata": {"source": "documentation", "topic": "programming"}
+    },
+    {
+        "id": "doc_007",
+        "text": "Transformers are the foundation of modern language models",
+        "metadata": {"source": "research", "topic": "nlp"}
+    },
+    {
+        "id": "doc_008",
+        "text": "Retrieval Augmented Generation combines retrieval and generation",
+        "metadata": {"source": "blog", "topic": "ai"}
+    }
+]

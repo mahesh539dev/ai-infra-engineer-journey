@@ -1,0 +1,6 @@
+{
+  "collection_name": "week2_learning",
+  "total_docs": 7,
+  "model": "default (sentence-transformers)",
+  "distance_metric": "cosine"
+}

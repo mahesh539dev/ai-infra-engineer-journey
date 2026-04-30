@@ -1,0 +1,260 @@
+{
+  "documents": [
+    {
+      "id": "doc_000",
+      "text": "Machine learning requires large datasets for training models effectively",
+      "metadata": {
+        "topic": "ai",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_001",
+      "text": "Deep neural networks learn hierarchical representations from raw data",
+      "metadata": {
+        "topic": "ai",
+        "source": "paper"
+      }
+    },
+    {
+      "id": "doc_002",
+      "text": "Transformers use attention mechanisms for natural language processing tasks",
+      "metadata": {
+        "topic": "ai",
+        "source": "course"
+      }
+    },
+    {
+      "id": "doc_003",
+      "text": "Embeddings map text to high-dimensional vectors for semantic representation",
+      "metadata": {
+        "topic": "ai",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_004",
+      "text": "Retrieval Augmented Generation improves large language model outputs",
+      "metadata": {
+        "topic": "ai",
+        "source": "research"
+      }
+    },
+    {
+      "id": "doc_005",
+      "text": "LangChain orchestrates AI agents and tool use for complex workflows",
+      "metadata": {
+        "topic": "ai",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_006",
+      "text": "Prompt engineering guides language model behavior and response quality",
+      "metadata": {
+        "topic": "ai",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_007",
+      "text": "Fine-tuning adapts pre-trained models to specific domains and tasks",
+      "metadata": {
+        "topic": "ai",
+        "source": "paper"
+      }
+    },
+    {
+      "id": "doc_008",
+      "text": "Vector similarity measures semantic relatedness between text documents",
+      "metadata": {
+        "topic": "ai",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_009",
+      "text": "RAG systems combine retrieval and generation for knowledge-grounded responses",
+      "metadata": {
+        "topic": "ai",
+        "source": "research"
+      }
+    },
+    {
+      "id": "doc_010",
+      "text": "PostgreSQL is a powerful open-source relational database system",
+      "metadata": {
+        "topic": "db",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_011",
+      "text": "MongoDB stores flexible JSON-like documents with dynamic schemas",
+      "metadata": {
+        "topic": "db",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_012",
+      "text": "Pinecone provides serverless vector database infrastructure at scale",
+      "metadata": {
+        "topic": "db",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_013",
+      "text": "ChromaDB makes vector search simple and portable for developers",
+      "metadata": {
+        "topic": "db",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_014",
+      "text": "HNSW indexing enables fast approximate nearest neighbor search queries",
+      "metadata": {
+        "topic": "db",
+        "source": "paper"
+      }
+    },
+    {
+      "id": "doc_015",
+      "text": "Vector databases scale similarity search to billions of documents",
+      "metadata": {
+        "topic": "db",
+        "source": "research"
+      }
+    },
+    {
+      "id": "doc_016",
+      "text": "pgvector extends PostgreSQL with vector operations and similarity search",
+      "metadata": {
+        "topic": "db",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_017",
+      "text": "B-tree indexes optimize SQL query performance for structured data",
+      "metadata": {
+        "topic": "db",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_018",
+      "text": "Database replication ensures high availability and disaster recovery",
+      "metadata": {
+        "topic": "db",
+        "source": "paper"
+      }
+    },
+    {
+      "id": "doc_019",
+      "text": "Query optimization reduces database load and improves application performance",
+      "metadata": {
+        "topic": "db",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_020",
+      "text": "Python dominates data science and artificial intelligence development",
+      "metadata": {
+        "topic": "prog",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_021",
+      "text": "FastAPI simplifies building REST APIs with automatic documentation",
+      "metadata": {
+        "topic": "prog",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_022",
+      "text": "Docker containerizes applications for consistent deployment across environments",
+      "metadata": {
+        "topic": "prog",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_023",
+      "text": "Kubernetes orchestrates containerized workloads at enterprise scale",
+      "metadata": {
+        "topic": "prog",
+        "source": "course"
+      }
+    },
+    {
+      "id": "doc_024",
+      "text": "Git version control enables team collaboration on software projects",
+      "metadata": {
+        "topic": "prog",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_025",
+      "text": "CI/CD pipelines automate testing and deployment for rapid iteration",
+      "metadata": {
+        "topic": "prog",
+        "source": "blog"
+      }
+    },
+    {
+      "id": "doc_026",
+      "text": "Microservices architecture decouples system components for scalability",
+      "metadata": {
+        "topic": "prog",
+        "source": "paper"
+      }
+    },
+    {
+      "id": "doc_027",
+      "text": "API design patterns ensure consistency and usability across endpoints",
+      "metadata": {
+        "topic": "prog",
+        "source": "docs"
+      }
+    },
+    {
+      "id": "doc_028",
+      "text": "Unit testing improves code reliability and maintainability over time",
+      "metadata": {
+        "topic": "prog",
+        "source": "tutorial"
+      }
+    },
+    {
+      "id": "doc_029",
+      "text": "Performance optimization reduces latency and operational costs",
+      "metadata": {
+        "topic": "prog",
+        "source": "blog"
+      }
+    }
+  ],
+  "metadata": {
+    "total_documents": 30,
+    "categories": {
+      "ai": 10,
+      "db": 10,
+      "prog": 10
+    },
+    "sources": {
+      "blog": 6,
+      "paper": 6,
+      "tutorial": 8,
+      "docs": 6,
+      "course": 2,
+      "research": 2
+    }
+  }
+}

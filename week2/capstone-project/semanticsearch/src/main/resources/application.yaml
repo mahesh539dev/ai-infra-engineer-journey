@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: semanticsearch
+
+server:
+  port: 8080
+
+search:
+  api:
+    base-url: http://localhost:8000

@@ -1,0 +1,2 @@
+Index: day3-week2-semantic-search
+Total vectors: 10

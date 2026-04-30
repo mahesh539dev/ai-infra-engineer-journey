@@ -1,0 +1,34 @@
+{
+  "test_date": "2026-04-28 23:10:24",
+  "documents_tested": 30,
+  "queries_per_db": 3,
+  "results": {
+    "chromadb": {
+      "insert_time": 1.93,
+      "query_times": [
+        551.17,
+        428.64,
+        433.08
+      ],
+      "latency_avg": 470.9633333333333
+    },
+    "pinecone": {
+      "insert_time": 1.29,
+      "query_times": [
+        51.38,
+        45.01,
+        80.73
+      ],
+      "latency_avg": 59.04
+    },
+    "pgvector": {
+      "insert_time": 0.68,
+      "query_times": [
+        13.1,
+        4.49,
+        6.28
+      ],
+      "latency_avg": 7.956666666666667
+    }
+  }
+}
