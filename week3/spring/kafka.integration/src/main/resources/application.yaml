@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafka.integration
+  cloud:
+    stream:
+      bindings:
+        ai-producer:
+          destination: learning-ai
+          producer:
+            useNativeEncoding: true
+      kafka:
+        binder:
+          producerProperties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            acks: all
+          brokers: localhost:9092
+search:
+  api:
+    base-url: localhost:8000
+server:
+  port: 8090

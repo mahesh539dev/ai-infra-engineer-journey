@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\learning_journey\\\\week3\\\\spring\\\\kafka.integration\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Csv -NoTypeInformation)",
+      "Bash(ConvertFrom-Csv)",
+      "Bash(Format-Table -AutoSize)"
+    ]
+  }
+}
