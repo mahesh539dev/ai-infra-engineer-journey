@@ -1,7 +1,7 @@
 # Week 2 — Embeddings & Semantic Search: ChromaDB, Pinecone, pgvector
 
-> **Part of my 90-Day AI Infrastructure Engineer journey.**
-> I'm a Senior Java / Kafka / Spring Boot engineer (7 years) transitioning into AI Infrastructure. Each week I build a project that adds a new AI skill on top of my existing backend expertise.
+> **Part of my AI Infrastructure Engineer learning journey.**
+> Senior Java / Kafka / Spring Boot engineer (7 years) building AI skills one project per week. See the [main README](../README.md) for the full roadmap and progress tracking.
 
 ---
 
@@ -324,34 +324,6 @@ curl "http://localhost:8080/api/search?query_text=machine+learning&num_results=3
 - **Vector column in SQL** — `embedding vector(384)` is a first-class PostgreSQL column type. You get HNSW indexing on it and can mix freely with standard SQL `WHERE` — hybrid search for free.
 - **PDF chunking with overlap** — Splitting at fixed character boundaries loses context at the seam. 100-char overlap means each chunk shares context with its neighbours, so the most relevant passage is never accidentally split.
 - **Serverless vector DB tradeoffs** — Pinecone's 59ms vs. pgvector's 8ms on 30 docs is almost entirely network round-trip. At 1M docs the trade reverses — pgvector needs more hardware, Pinecone scales automatically without ops work.
-
----
-
-## Roadmap Context
-
-This is **Week 2 of 12** in my AI Infrastructure Engineer transition:
-
-```
-Phase 1 (Weeks 1–4): AI Foundations + Data Pipelines
-  ✅ Week 1: Python for AI — NumPy, Pandas, FastAPI, Embeddings
-  ✅ Week 2: Embeddings & Semantic Search (ChromaDB, Pinecone, pgvector)   ← YOU ARE HERE
-  ⬜ Week 3: AI Data Pipeline with Kafka
-  ⬜ Week 4: Spring AI + ML Fundamentals
-
-Phase 2 (Weeks 5–9): LLM Applications & RAG Systems
-  ⬜ Week 5: Transformers, LLM APIs & Prompt Engineering
-  ⬜ Week 6: RAG Systems — chunking, hybrid search, reranking
-  ⬜ Week 7: LangChain & Python AI Microservices
-  ⬜ Week 8: LangGraph — Stateful Agent Workflows
-  ⬜ Week 9: AI Content Automation Platform (Phase 2 capstone)
-
-Phase 3 (Weeks 10–12): AI Infrastructure & Production Systems
-  ⬜ Week 10: Model Serving — vLLM & Ollama
-  ⬜ Week 11: AI Observability & MLOps (LangSmith, W&B, MLflow)
-  ⬜ Week 12: Capstone — AI Social Media Automation Platform
-```
-
-**My background advantage:** 7 years of Java / Apache Kafka / Spring Boot / Docker / Kubernetes in production means I can skip the infrastructure fundamentals and go straight into AI-specific skills. The goal is to become the engineer who can integrate AI into enterprise stacks — not just build Python scripts.
 
 ---
 

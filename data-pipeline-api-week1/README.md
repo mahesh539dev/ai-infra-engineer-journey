@@ -1,7 +1,7 @@
 # Week 1 — Python for AI: Data Pipeline & REST API
 
-> **Part of my 90-Day AI Infrastructure Engineer journey.**
-> I'm a Senior Java / Kafka / Spring Boot engineer (7 years) transitioning into AI Infrastructure. Each week I build a project that adds a new AI skill on top of my existing backend expertise.
+> **Part of my AI Infrastructure Engineer learning journey.**
+> Senior Java / Kafka / Spring Boot engineer (7 years) building AI skills one project per week. See the [main README](../README.md) for the full roadmap and progress tracking.
 
 ---
 
@@ -154,34 +154,6 @@ Open http://localhost:8000/docs for the interactive Swagger UI.
 - **Pre-computation pattern** — encode once at startup, query instantly at runtime (critical for production)
 - **NumPy broadcasting** — why `reshape(1, -1)` is needed when computing similarity of one vector against a matrix
 - **Pandas groupby serialization** — `.groupby().size()` returns an Index, not a plain dict; need explicit casting for JSON
-
----
-
-## Roadmap Context
-
-This is **Week 1 of 12** in my AI Infrastructure Engineer transition:
-
-```
-Phase 1 (Weeks 1–4): AI Foundations + Data Pipelines
-  ✅ Week 1: Python for AI — NumPy, Pandas, FastAPI, Embeddings
-  ✅ Week 2: Embeddings & Semantic Search (ChromaDB, Pinecone, pgvector)   ← YOU ARE HERE
-  ⬜ Week 3: AI Data Pipeline with Kafka
-  ⬜ Week 4: Spring AI + ML Fundamentals
-
-Phase 2 (Weeks 5–9): LLM Applications & RAG Systems
-  ⬜ Week 5: Transformers, LLM APIs & Prompt Engineering
-  ⬜ Week 6: RAG Systems — chunking, hybrid search, reranking
-  ⬜ Week 7: LangChain & Python AI Microservices
-  ⬜ Week 8: LangGraph — Stateful Agent Workflows
-  ⬜ Week 9: AI Content Automation Platform (Phase 2 capstone)
-
-Phase 3 (Weeks 10–12): AI Infrastructure & Production Systems
-  ⬜ Week 10: Model Serving — vLLM & Ollama
-  ⬜ Week 11: AI Observability & MLOps (LangSmith, W&B, MLflow)
-  ⬜ Week 12: Capstone — AI Social Media Automation Platform
-```
-
-**My background advantage:** 7 years of Java / Apache Kafka / Spring Boot / Docker / Kubernetes in production means I can skip the infrastructure fundamentals and go straight into AI-specific skills. The goal is to become the engineer who can integrate AI into enterprise stacks — not just build Python scripts.
 
 ---
 

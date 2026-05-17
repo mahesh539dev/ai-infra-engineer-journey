@@ -6,8 +6,8 @@ A Spring Boot 4 application with two responsibilities: publishing AI learning ev
 
 ## What This Does
 
-- Publishes `KafkaEvent` messages (message, topic, subtopic) to the `learning-ai` Kafka topic
-- Exposes `GET /retrieve?topic=<value>` — a non-blocking REST endpoint that calls a downstream vector search service and returns ranked results
+- Accepts `KafkaEvent` messages (message, topic, subtopic) via `POST /api/loaddata` and `POST /api/loaddatabulk`, and publishes them to the `learning-ai` Kafka topic
+- Exposes `GET /api/retrieve?topic=<value>` — a non-blocking REST endpoint that calls a downstream vector search service and returns ranked results
 - Handles all error scenarios (validation, downstream failures, service unavailability) with structured JSON error responses
 
 ---
@@ -17,28 +17,39 @@ A Spring Boot 4 application with two responsibilities: publishing AI learning ev
 ```
 HTTP Client
     │
-    ▼
-GET /retrieve?topic=X
+    ├── POST /api/loaddata          (single KafkaEvent)
+    ├── POST /api/loaddatabulk      (list of KafkaEvents)
+    │         │
+    │         ▼
+    │   LoadData (Handler)          ← validates fields, throws ValidationException if blank/missing
+    │         │
+    │         ▼
+    │   KafkaProducer               ← StreamBridge.send("ai-producer", message)
     │
-    ▼
-RetrieveInfo (Handler)          ← validates query param, throws ValidationException if blank
-    │
-    ▼
-RetrieveService                 ← WebClient call to downstream search service
-    │   GET {search.api.base-url}/retrieve-by-topic?topic=X
-    │
-    ▼
-Response { topicResults: Map<String, ResultEntry> }
-    │   ResultEntry { text, metadata, similarity }
-    ▼
-JSON response to client
+    └── GET /api/retrieve?topic=X
+              │
+              ▼
+        RetrieveInfo (Handler)      ← validates query param, throws ValidationException if blank
+              │
+              ▼
+        RetrieveService             ← WebClient call to downstream search service
+              │   GET {search.api.base-url}/retrieve-by-topic?topic=X
+              │
+              ▼
+        Response { topicResults: Map<String, ResultEntry> }
+              │   ResultEntry { text, metadata, similarity }
+              ▼
+        JSON response to client
 
 ─────────────────────────────────
 
 Spring Cloud Stream
     │
     ├── binding: ai-producer → topic: learning-ai
-    ├── serializer: JsonSerializer
+    ├── useNativeEncoding: true
+    ├── key.serializer: StringSerializer
+    ├── value.serializer: JsonSerializer
+    ├── acks: all
     └── broker: localhost:9092
 ```
 
@@ -57,18 +68,26 @@ Spring Cloud Stream
 
 ```yaml
 spring:
+  application:
+    name: kafka.integration
   cloud:
     stream:
       bindings:
         ai-producer:
-          destination: learning-ai   # Kafka topic name
+          destination: learning-ai
+          producer:
+            useNativeEncoding: true
       kafka:
         binder:
+          producerProperties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            acks: all
           brokers: localhost:9092
 
 search:
   api:
-    base-url: localhost:8000         # downstream search service
+    base-url: localhost:8000
 
 server:
   port: 8090
@@ -84,7 +103,46 @@ server:
 
 ## API Reference
 
-### `GET /retrieve`
+### `POST /api/loaddata`
+
+Publishes a single `KafkaEvent` to the `learning-ai` Kafka topic.
+
+**Request Body**
+
+```json
+{ "message": "Introduction to neural networks", "topic": "machine-learning", "subtopic": "deep-learning" }
+```
+
+**Response**
+
+```json
+{ "status": "success", "message": "Event published to Kafka" }
+```
+
+---
+
+### `POST /api/loaddatabulk`
+
+Publishes a list of `KafkaEvent` objects in one call.
+
+**Request Body**
+
+```json
+[
+  { "message": "...", "topic": "...", "subtopic": "..." },
+  { "message": "...", "topic": "...", "subtopic": "..." }
+]
+```
+
+**Response**
+
+```json
+{ "status": "success", "message": "Events published to Kafka", "count": 2 }
+```
+
+---
+
+### `GET /api/retrieve`
 
 Searches the vector index for results matching the given topic.
 
@@ -97,7 +155,7 @@ Searches the vector index for results matching the given topic.
 **Example Request**
 
 ```
-GET http://localhost:8090/retrieve?topic=machine-learning
+GET http://localhost:8090/api/retrieve?topic=machine-learning
 ```
 
 **Example Response**
@@ -114,13 +172,15 @@ GET http://localhost:8090/retrieve?topic=machine-learning
 }
 ```
 
-**Error Responses**
+---
+
+**Error Responses (all endpoints)**
 
 | Scenario | Status | Error |
 |----------|--------|-------|
-| `topic` param missing or blank | `400 Bad Request` | `"Topic in the search cannot be blank"` |
+| Missing/blank field or param | `400 Bad Request` | validation message |
 | Downstream service returns 4xx/5xx | `502 Bad Gateway` | `"Downstream error: <status_code>"` |
-| Downstream service unreachable | `503 Service Unavailable` | `"Search service is unavailable"` |
+| Downstream service / Kafka unreachable | `503 Service Unavailable` | `"Search service is unavailable"` |
 | Unexpected server error | `500 Internal Server Error` | `"An unexpected error occurred"` |
 
 All errors return:
